@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - Nightingale</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: Arial, sans-serif;
+            background: #0d2b4a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            text-align: center;
+        }
+        .container h1 {
+            color: white;
+            font-size: 32px;
+            margin-bottom: 30px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        .card-grid {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .card {
+            background: #1a3c5e;
+            color: white;
+            padding: 40px 50px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-size: 22px;
+            font-weight: 600;
+            transition: transform 0.2s, background 0.2s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            min-width: 160px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .card:hover {
+            transform: translateY(-6px);
+            background: #1e4a72;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Nightingale</h1>
+        <div class="card-grid">
+            <a href="/login?role=patient" class="card">Patient</a>
+            <a href="/login?role=doctor" class="card">Doctor</a>
+            <a href="/login?role=nurse" class="card">Nurse</a>
+        </div>
+    </div>
+</body>
+</html>
