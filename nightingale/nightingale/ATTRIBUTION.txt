@@ -1,0 +1,28 @@
+ATTRIBUTION
+===========
+
+Third-Party Libraries
+---------------------
+- Flask (BSD 3-Clause License)
+  https://flask.palletsprojects.com/
+  Used as the web framework.
+
+- Python 3 Standard Library
+  Used for core logic and testing.
+
+AI Models
+---------
+Optional: DeepSeek Chat API (deepseek-chat), accessed through its
+OpenAI-compatible endpoint (https://api.deepseek.com/v1), enabled only
+when NIGHTINGALE_LLM_API_KEY is set.
+  https://api-docs.deepseek.com/
+  Used to regenerate patient AI suggestions on the doctor site.
+  The provider is swappable via NIGHTINGALE_LLM_BASE_URL /
+  NIGHTINGALE_LLM_MODEL — any OpenAI-compatible API works.
+
+By default no LLM is called; AI content is static simulated text, and
+patient text is PHI-redacted before any real LLM request (see ai.py).
+
+Notes
+-----
+This project is submitted for the Nightingale 72-Hour Build.
