@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ entry_role|capitalize }} Site - Nightingale</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: Arial, sans-serif;
+            background: #0d2b4a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            text-align: center;
+            max-width: 720px;
+            padding: 20px;
+        }
+        .container h1 {
+            color: white;
+            font-size: 32px;
+            margin-bottom: 8px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        .container .subtitle {
+            color: rgba(255,255,255,0.6);
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+        .card-grid {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .card {
+            background: #1a3c5e;
+            color: white;
+            padding: 40px 50px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-size: 22px;
+            font-weight: 600;
+            transition: transform 0.2s, background 0.2s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            min-width: 160px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .card:hover {
+            transform: translateY(-6px);
+            background: #1e4a72;
+        }
+        .error {
+            background: #5c1f24;
+            border: 1px solid #a9444e;
+            color: #f6c6c9;
+            padding: 12px 18px;
+            border-radius: 10px;
+            margin: 0 auto 20px;
+            max-width: 480px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Nightingale — {{ entry_role|capitalize }} Site</h1>
+        <p class="subtitle">This address admits only the {{ entry_role }} role — the other two cards are rejected by the server</p>
+        {% if error %}<div class="error">{{ error }}</div>{% endif %}
+        <div class="card-grid">
+            <a href="/login?claim=patient" class="card">Patient</a>
+            <a href="/login?claim=doctor" class="card">Doctor</a>
+            <a href="/login?claim=nurse" class="card">Nurse</a>
+        </div>
+    </div>
+</body>
+</html>
